@@ -1,0 +1,37 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Posix" />
+  </Configurations>
+  <Folder Name="/Host/">
+    <Project Path="NzbDrone.Console/Prowlarr.Console.csproj" />
+    <Project Path="NzbDrone.Host/Prowlarr.Host.csproj" />
+  </Folder>
+  <Folder Name="/Platform/">
+    <Project Path="NzbDrone.Mono/Prowlarr.Mono.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="../.editorconfig" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="NzbDrone.Automation.Test/Prowlarr.Automation.Test.csproj" />
+    <Project Path="NzbDrone.Common.Test/Prowlarr.Common.Test.csproj" />
+    <Project Path="NzbDrone.Core.Test/Prowlarr.Core.Test.csproj" />
+    <Project Path="NzbDrone.Host.Test/Prowlarr.Host.Test.csproj" />
+    <Project Path="NzbDrone.Integration.Test/Prowlarr.Integration.Test.csproj" />
+    <Project Path="NzbDrone.Libraries.Test/Prowlarr.Libraries.Test.csproj" />
+    <Project Path="Prowlarr.Api.V1.Test/Prowlarr.Api.V1.Test.csproj" />
+    <Project Path="Prowlarr.Benchmark.Test/Prowlarr.Benchmark.Test.csproj" />
+  </Folder>
+  <Folder Name="/Tests/Platform/">
+    <Project Path="NzbDrone.Mono.Test/Prowlarr.Mono.Test.csproj" />
+  </Folder>
+  <Folder Name="/Tests/Test.Common/">
+    <Project Path="NzbDrone.Test.Common/Prowlarr.Test.Common.csproj" />
+    <Project Path="NzbDrone.Test.Dummy/Prowlarr.Test.Dummy.csproj" />
+  </Folder>
+  <Project Path="NzbDrone.Common/Prowlarr.Common.csproj" />
+  <Project Path="NzbDrone.Core/Prowlarr.Core.csproj" />
+  <Project Path="NzbDrone.SignalR/Prowlarr.SignalR.csproj" />
+  <Project Path="Prowlarr.Api.V1/Prowlarr.Api.V1.csproj" />
+  <Project Path="Prowlarr.Http/Prowlarr.Http.csproj" />
+</Solution>
