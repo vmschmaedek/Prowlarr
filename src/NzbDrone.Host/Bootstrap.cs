@@ -283,7 +283,7 @@ namespace NzbDrone.Host
 
             try
             {
-                certificate = new X509Certificate2(cert, password, X509KeyStorageFlags.DefaultKeySet);
+                certificate = X509Certificate2.CreateFromPemFile(cert, password);
             }
             catch (CryptographicException ex)
             {

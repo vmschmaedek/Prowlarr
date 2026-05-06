@@ -35,7 +35,7 @@ namespace Prowlarr.Api.V1.Config
 
             try
             {
-                new X509Certificate2(resource.SslCertPath, resource.SslCertPassword, X509KeyStorageFlags.DefaultKeySet);
+                X509Certificate2.CreateFromPemFile(resource.SslCertPath, resource.SslCertPassword);
 
                 return true;
             }

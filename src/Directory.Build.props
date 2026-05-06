@@ -8,7 +8,7 @@
 
     <PlatformTarget>AnyCPU</PlatformTarget>
     <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
-    <RuntimeIdentifiers>win-x64;win-x86;osx-x64;osx-arm64;linux-x64;linux-musl-x64;linux-musl-arm;linux-arm;linux-arm64;linux-musl-arm64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win-x64;win-x86;osx-x64;osx-arm64;linux-x64;linux-musl-x64;linux-musl-arm;linux-arm;linux-arm64;linux-musl-arm64;linux-riscv64</RuntimeIdentifiers>
 
     <ProwlarrRootDir>$(MSBuildThisFileDirectory)..\</ProwlarrRootDir>
 
@@ -187,6 +187,11 @@
     <When Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm'">
       <PropertyGroup>
         <Architecture>arm</Architecture>
+      </PropertyGroup>
+    </When>
+    <When Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Riscv64'">
+      <PropertyGroup>
+        <Architecture>riscv64</Architecture>
       </PropertyGroup>
     </When>
     <Otherwise>

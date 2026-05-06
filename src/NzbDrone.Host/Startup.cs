@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using NLog.Extensions.Logging;
 using NzbDrone.Common.EnvironmentInfo;
 using NzbDrone.Common.Instrumentation;
@@ -32,7 +32,7 @@ using Prowlarr.Http.ClientSchema;
 using Prowlarr.Http.ErrorManagement;
 using Prowlarr.Http.Frontend;
 using Prowlarr.Http.Middleware;
-using IPNetwork = Microsoft.AspNetCore.HttpOverrides.IPNetwork;
+using IPNetwork = System.Net.IPNetwork;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace NzbDrone.Host
@@ -61,11 +61,11 @@ namespace NzbDrone.Host
             services.Configure<ForwardedHeadersOptions>(options =>
             {
                 options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto | ForwardedHeaders.XForwardedHost;
-                options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse("10.0.0.0"), 8));
-                options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse("172.16.0.0"), 12));
-                options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse("192.168.0.0"), 16));
-                options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse("fc00::"), 7));
-                options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse("fe80::"), 10));
+                options.KnownIPNetworks.Add(new IPNetwork(IPAddress.Parse("10.0.0.0"), 8));
+                options.KnownIPNetworks.Add(new IPNetwork(IPAddress.Parse("172.16.0.0"), 12));
+                options.KnownIPNetworks.Add(new IPNetwork(IPAddress.Parse("192.168.0.0"), 16));
+                options.KnownIPNetworks.Add(new IPNetwork(IPAddress.Parse("fc00::"), 7));
+                options.KnownIPNetworks.Add(new IPNetwork(IPAddress.Parse("fe80::"), 10));
             });
 
             services.AddRouting(options => options.LowercaseUrls = true);
